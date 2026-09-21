@@ -1030,6 +1030,78 @@
         }
       }
 
+      /* digits in addresses and phone numbers: a face whose "1" has a base
+         serif, so 1005 can't be misread as I005 */
+      .num {
+        font-family: Georgia, "Noto Serif", "Liberation Serif", "Times New Roman", serif;
+        font-variant-numeric: lining tabular;
+        letter-spacing: 0.015em;
+      }
+
+      /* ---- RESIDENCE + CONTACT (closing) ---- */
+      .residence {
+        margin-top: 30px;
+        padding-top: 26px;
+        border-top: 1px solid rgba(217, 174, 82, 0.25);
+      }
+      .rlabel {
+        font-family: "Marcellus", serif;
+        font-size: 0.6rem;
+        letter-spacing: 0.24em;
+        text-transform: uppercase;
+        color: var(--gold-lt);
+        opacity: 0.85;
+        margin-bottom: 9px;
+      }
+      .raddr {
+        margin: 0;
+        font-size: 0.98rem;
+        line-height: 1.65;
+        color: var(--ivory);
+        opacity: 0.85;
+      }
+      .rphones {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 6px 10px;
+        margin-top: 14px;
+      }
+      .rphones a {
+        display: inline-flex;
+        align-items: center;
+        gap: 7px;
+        padding: 7px 14px;
+        border: 1px solid rgba(217, 174, 82, 0.4);
+        border-radius: 20px;
+        text-decoration: none;
+        color: var(--gold-pale);
+        font-family: "Marcellus", serif;
+        font-size: 0.8rem;
+        letter-spacing: 0.06em;
+        transition:
+          background 0.3s,
+          color 0.3s,
+          border-color 0.3s;
+      }
+      .rphones a svg {
+        width: 13px;
+        height: 13px;
+        flex: 0 0 13px;
+        opacity: 0.85;
+      }
+      .rphones a:hover,
+      .rphones a:active {
+        background: var(--gold-lt);
+        border-color: var(--gold-lt);
+        color: var(--maroon-deep);
+      }
+      .rsep {
+        color: var(--gold-lt);
+        opacity: 0.4;
+      }
+
       /* ---- CLOSING ---- */
       .close {
         background: linear-gradient(175deg, var(--maroon-deep), #380914);
@@ -1207,8 +1279,8 @@
             <div class="vlabel">The Wedding Venue</div>
             <div class="vname">Royal Garden</div>
             <div class="vaddr">
-              Near Shantikunj Colony, Road No. 4, Kathiapul Road,<br />Peerumadara, Uttarakhand
-              244715
+              Near Shantikunj Colony, Road No. <span class="num">4</span>, Kathiapul Road,<br />Peerumadara,
+              Uttarakhand <span class="num">244715</span>
             </div>
             <a
               class="loc"
@@ -1652,7 +1724,33 @@
             Your presence is the greatest blessing we could ask for. We look forward to celebrating
             these days with you.
           </p>
-          <p class="signoff rv d3">With love &amp; gratitude,<br />Deepak &amp; Kavita</p>
+          <div class="residence rv d3">
+            <div class="rlabel">Our Residence</div>
+            <p class="raddr">
+              H. No. <span class="num">1005</span>, Sector <span class="num">5</span>, R. K.
+              Puram,<br />New Delhi <span class="num">110022</span>
+            </p>
+            <div class="rphones">
+              <a href="tel:+919711210758">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7">
+                  <path
+                    d="M6.5 3h3l1.5 4-2 1.5a12 12 0 0 0 6.5 6.5L17 13l4 1.5v3a2 2 0 0 1-2.2 2A16.5 16.5 0 0 1 4 7.2 2 2 0 0 1 6 5z"
+                  />
+                </svg>
+                <span class="num">97112 10758</span>
+              </a>
+              <span class="rsep">·</span>
+              <a href="tel:+919069990356">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7">
+                  <path
+                    d="M6.5 3h3l1.5 4-2 1.5a12 12 0 0 0 6.5 6.5L17 13l4 1.5v3a2 2 0 0 1-2.2 2A16.5 16.5 0 0 1 4 7.2 2 2 0 0 1 6 5z"
+                  />
+                </svg>
+                <span class="num">90699 90356</span>
+              </a>
+            </div>
+          </div>
+          <p class="signoff rv d4">With love &amp; gratitude,<br />Deepak &amp; Kavita</p>
         </div>
       </section>
     </main>
